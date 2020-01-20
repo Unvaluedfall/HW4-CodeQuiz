@@ -1,0 +1,37 @@
+#startContainer {
+    display: block;
+}
+#questionContainer {
+    display: none;
+}
+#highScoresContainer{
+  display: none;
+}
+
+#wrong {
+  display: none;
+}
+
+#right {
+  display: none;
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-size: 30px;
+    line-height: 32px;
+    color: #777777;
+    background-color: whitesmoke;
+  }
+
+  /* Classes */
+  div.container{
+    width: 90%;
+    background: white;
+    margin: 0 auto 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+  }
