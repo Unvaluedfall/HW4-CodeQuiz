@@ -184,7 +184,7 @@ function nextQuestion(){
 
 // 
 function generateHighScores(){
-  
+  HighScoreScore = 0;
   var inputNameArray = JSON.parse(localStorage.getItem("theirName"))
   var inputScoreArray = JSON.parse(localStorage.getItem("theirScore"))
   
