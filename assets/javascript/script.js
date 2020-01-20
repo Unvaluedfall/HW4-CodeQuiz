@@ -8,7 +8,6 @@
             hideStartPage();
             hideQuestionContainer();
             showHighscoreContainer();
-            generateHighScores();
       });
   
 // Main Content
@@ -59,21 +58,19 @@
     var HighScoreFormEl = document.querySelector("#highScoresForms");
         HighScoreFormEl.addEventListener("submit", function(e){
             e.preventDefault()
-            inputValue = HighScoreInputEl.value
+            var inputName = HighScoreInputEl.value
             
-            var inputNameArray = [];
-            var inputScoreArray = [];
-  
-            inputNameArray.push(inputName);
-            inputScoreArray.push(inputScor);
+            inputNameArray = [];
+            inputScoreArray = [];
 
-            localStorage.setItem("theirName", inputNameArray);
-            localStorage.setItem("theirScore", inputScoreArray);
+            inputNameArray.push(inputName);
+            inputScoreArray.push(HighScoreScore);
             
+            localStorage.setItem("theirName", JSON.stringify(inputNameArray));
+            localStorage.setItem("theirScore", JSON.stringify(inputScoreArray));
             
             generateHighScores();
-
-            
+            HighScoreInputEl.value = " "; 
         });
 
 
@@ -188,11 +185,8 @@ function nextQuestion(){
 // 
 function generateHighScores(){
   
-  localStorage.getItem("theirName")
-  localStorage.getItem("theirScore")
-  
-  
-  
+  var inputNameArray = JSON.parse(localStorage.getItem("theirName"))
+  var inputScoreArray = JSON.parse(localStorage.getItem("theirScore"))
   
   for(i = 0; i < inputScoreArray.length; i++){
     var liEl = document.createElement("li");
